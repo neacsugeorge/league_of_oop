@@ -16,7 +16,7 @@ public final class Rogue extends Hero {
     private int stabs = 0;
 
     public Rogue() {
-        this.baseHealth = BASE_HEALTH;
+        this.baseHealth = this.health = BASE_HEALTH;
         this.healthPerLevel = HEALTH_PER_LEVEL;
         this.greatLand = GREAT_LAND;
         this.heroShortName = SHORT_NAME;
@@ -39,6 +39,12 @@ public final class Rogue extends Hero {
     public int getAttackDamage(final Hero victim) {
         return Ability.Backstab.getDamage(this, victim)
                 + Ability.Paralysis.getDamage(this, victim);
+    }
+
+    @Override
+    public int getSimulatedDamage(final Hero victim) {
+        return Ability.Backstab.getUntargettedDamage(this, victim)
+                + Ability.Paralysis.getUntargettedDamage(this, victim);
     }
 
     @Override

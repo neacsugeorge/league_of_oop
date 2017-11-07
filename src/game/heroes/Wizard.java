@@ -10,7 +10,7 @@ public final class Wizard extends Hero {
     public static final char SHORT_NAME = 'W';
 
     public Wizard() {
-        this.baseHealth = BASE_HEALTH;
+        this.baseHealth = this.health = BASE_HEALTH;
         this.healthPerLevel = HEALTH_PER_LEVEL;
         this.greatLand = GREAT_LAND;
         this.heroShortName = SHORT_NAME;
@@ -20,6 +20,12 @@ public final class Wizard extends Hero {
     public int getAttackDamage(final Hero victim) {
         return Ability.Drain.getDamage(this, victim)
                 + Ability.Deflect.getDamage(this, victim);
+    }
+
+    @Override
+    public int getSimulatedDamage(final Hero victim) {
+        return Ability.Drain.getUntargettedDamage(this, victim)
+                + Ability.Deflect.getUntargettedDamage(this, victim);
     }
 
     @Override

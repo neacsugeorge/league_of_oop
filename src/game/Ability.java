@@ -49,7 +49,7 @@ public enum Ability {
         }
 
         float getModifier(final Hero victim) {
-            int damagePercent = DEFAULT_DAMAGE_PERCENT;
+            float damagePercent = DEFAULT_DAMAGE_PERCENT;
             if (victim instanceof Rogue) {
                 damagePercent += vsRogue;
             } else if (victim instanceof Knight) {
@@ -60,7 +60,7 @@ public enum Ability {
                 damagePercent += vsWizard;
             }
 
-            return damagePercent / DEFAULT_DAMAGE_PERCENT;
+            return (damagePercent / DEFAULT_DAMAGE_PERCENT);
         }
     }
 
@@ -94,7 +94,7 @@ public enum Ability {
     }
 
     public int getUntargettedDamage(final Hero attacker, final Hero victim) {
-        int damage = getBaseDamage(attacker);
+        float damage = getBaseDamage(attacker);
         float landModifier = 1f;
 
         if (attacker.hasLandAdvantage()) {
@@ -122,11 +122,11 @@ public enum Ability {
             default:
         }
 
-        return damage;
+        return (int) damage;
     }
 
     public int getDamage(final Hero attacker, final Hero victim) {
-        int damage = getBaseDamage(attacker);
+        float damage = getBaseDamage(attacker);
         float landModifier = 1f;
 
         if (attacker.hasLandAdvantage()) {
@@ -162,7 +162,8 @@ public enum Ability {
                 if (victim instanceof Wizard) {
                     damage = 0;
                 } else {
-                    damage = Math.round(getUntargettedDamage(victim, attacker)
+                    damage = Math.round(victim.getSimulatedDamage(attacker)
+                            * (damage / PERCENT)
                             * landModifier
                             * Modifier.Deflect.getModifier(victim));
                 }
@@ -177,6 +178,6 @@ public enum Ability {
             default:
         }
 
-        return damage;
+        return (int) damage;
     }
 }

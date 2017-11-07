@@ -11,8 +11,42 @@ import java.util.ArrayList;
 import java.util.ListIterator;
 
 class Main {
+    public static void printState(final ListIterator<Hero> iterator, final FileWriter output) throws IOException {
+        while (iterator.hasNext()) {
+            Hero current = iterator.next();
+            if (current.isAlive()) {
+                output.writeCharacter(current.getShortName());
+                output.writeCharacter(' ');
+                output.writeInt(current.getLevel());
+                output.writeCharacter(' ');
+                output.writeInt(current.getXP());
+                output.writeCharacter(' ');
+                output.writeInt(current.getHealth());
+                output.writeCharacter(' ');
+                Point currentPosition = current.getPosition();
+                output.writeInt((int) currentPosition.getX());
+                output.writeCharacter(' ');
+                output.writeInt((int) currentPosition.getY());
+                output.writeNewLine();
+
+                // Debug
+                System.out.println(current.getShortName() + " " + current.getLevel() + " "
+                        + current.getXP() + " " + current.getHealth() + " "
+                        + (int) currentPosition.getX() + " " + (int) currentPosition.getY());
+            } else {
+                output.writeCharacter(current.getShortName());
+                output.writeCharacter(' ');
+                output.writeWord("Dead");
+                output.writeNewLine();
+
+                // Debug
+                System.out.println(current.getShortName() + " Dead");
+            }
+        }
+    }
+
     public static void main(final String[] args) throws IOException {
-        String inputFile = "in.txt"; //args[0];
+        String inputFile = "/home/george/Work/league_of_oop/in.txt"; //args[0];
         String outputFile = "out.txt"; //args[1];
 
         FileReader input = new FileReader(inputFile);
@@ -51,30 +85,10 @@ class Main {
         for (i = 0; i < rounds; i++) {
             String round = input.nextWord();
             game.executeRound(round);
+
         }
 
-        ArrayList<Hero> finalHeroes = game.getHeroes();
-        ListIterator<Hero> iterator = finalHeroes.listIterator();
-
-        while (iterator.hasNext()) {
-            Hero current = iterator.next();
-            if (current.isAlive()) {
-                output.writeCharacter(current.getShortName());
-                output.writeCharacter(' ');
-                output.writeInt(current.getLevel());
-                output.writeCharacter(' ');
-                output.writeInt(current.getXP());
-                output.writeCharacter(' ');
-                output.writeInt(current.getHealth());
-                output.writeCharacter(' ');
-                Point currentPosition = current.getPosition();
-                output.writeInt((int) currentPosition.getX());
-                output.writeCharacter(' ');
-                output.writeInt((int) currentPosition.getY());
-                output.writeNewLine();
-            }
-        }
-
+        printState(game.getHeroes().listIterator(), output);
         input.close();
         output.close();
     }

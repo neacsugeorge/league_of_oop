@@ -3,7 +3,7 @@ package game;
 import java.awt.Point;
 
 public abstract class Hero {
-    private int health;
+    protected int health;
     protected int healthPerLevel;
     protected int baseHealth;
 
@@ -16,8 +16,8 @@ public abstract class Hero {
 
     private Ability abilityOverTime;
     private Hero overTimeAttacker;
-    private int abilityOverTimeDamage;
-    private int overTimeDuration;
+    private int abilityOverTimeDamage = 0;
+    private int overTimeDuration = 0;
 
     private Point position;
     protected char landType;
@@ -54,7 +54,7 @@ public abstract class Hero {
     }
 
     public final boolean isAlive() {
-        return health <= 0;
+        return health > 0;
     }
 
     public final void setPosition(final Point newPosition) {
@@ -80,7 +80,7 @@ public abstract class Hero {
             attacker.killed(this);
         }
 
-        health = 0;
+        health = newHealth;
     }
 
     public final void killed(final Hero victim) {
@@ -133,6 +133,7 @@ public abstract class Hero {
     }
 
     public abstract int getAttackDamage(Hero victim);
+    public abstract int getSimulatedDamage(final Hero victim);
     public abstract void attack(Hero victim);
 
     public final void accept(final Hero attacker) {

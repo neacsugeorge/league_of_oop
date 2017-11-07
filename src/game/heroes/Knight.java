@@ -11,7 +11,7 @@ public final class Knight extends Hero {
     public static final char SHORT_NAME = 'K';
 
     public Knight() {
-        this.baseHealth = BASE_HEALTH;
+        this.baseHealth = this.health = BASE_HEALTH;
         this.healthPerLevel = HEALTH_PER_LEVEL;
         this.greatLand = GREAT_LAND;
         this.heroShortName = SHORT_NAME;
@@ -21,6 +21,12 @@ public final class Knight extends Hero {
     public int getAttackDamage(final Hero victim) {
         return Ability.Execute.getDamage(this, victim)
                 + Ability.Slam.getDamage(this, victim);
+    }
+
+    @Override
+    public int getSimulatedDamage(final Hero victim) {
+        return Ability.Execute.getUntargettedDamage(this, victim)
+                + Ability.Slam.getUntargettedDamage(this, victim);
     }
 
     @Override

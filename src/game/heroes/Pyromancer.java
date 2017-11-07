@@ -11,7 +11,7 @@ public final class Pyromancer extends Hero {
     public static final char SHORT_NAME = 'P';
 
     public Pyromancer() {
-        this.baseHealth = BASE_HEALTH;
+        this.baseHealth = this.health = BASE_HEALTH;
         this.healthPerLevel = HEALTH_PER_LEVEL;
         this.greatLand = GREAT_LAND;
         this.heroShortName = SHORT_NAME;
@@ -21,6 +21,12 @@ public final class Pyromancer extends Hero {
     public int getAttackDamage(final Hero victim) {
         return Ability.Fireblast.getDamage(this, victim)
                 + Ability.Ignite_Active.getDamage(this, victim);
+    }
+
+    @Override
+    public int getSimulatedDamage(final Hero victim) {
+        return Ability.Fireblast.getUntargettedDamage(this, victim)
+                + Ability.Ignite_Active.getUntargettedDamage(this, victim);
     }
 
     @Override

@@ -114,13 +114,14 @@ public class Map {
             Hero current = iterator.next();
             Point currentPosition = current.getPosition();
 
-            ListIterator<Hero> nextIterator = heroes.listIterator(idx);
+            ListIterator<Hero> nextIterator = heroes.listIterator(idx + 1);
             while (nextIterator.hasNext()) {
                 Hero next = nextIterator.next();
                 Point nextPosition = next.getPosition();
 
                 if (currentPosition.equals(nextPosition)) {
                     current.attack(next);
+                    current.accept(next);
                 }
             }
         }
