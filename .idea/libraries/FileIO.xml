@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FileIO">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../FileIO.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
