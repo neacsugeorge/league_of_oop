@@ -128,8 +128,11 @@ public class Map {
                 }
 
                 if (currentPosition.equals(nextPosition)) {
-                    current.attack(next);
-                    current.accept(next);
+                    if (current.canAttack() && next.canAttack()) {
+                        current.attack(next);
+                        current.accept(next);
+                    }
+
                 }
             }
         }

@@ -38,5 +38,7 @@ public final class Knight extends Hero {
 
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Stun, STUN_DURATION, this);
+
+        this.postAttackHandler();
     }
 }

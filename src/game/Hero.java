@@ -25,6 +25,7 @@ public abstract class Hero {
     private Point position;
     protected char landType;
     protected char greatLand;
+    private boolean foughtThisRound = false;
 
     protected char heroShortName;
 
@@ -122,6 +123,14 @@ public abstract class Hero {
         return true;
     }
 
+    public final boolean canAttack() {
+        if (!foughtThisRound) {
+            return true;
+        }
+
+        return false;
+    }
+
     public final void finishRound() {
         int neededXP = BASE_LEVEL_REQUIRED_XP + level * PER_LEVEL_REQUIRED_XP;
         while (xp >= neededXP) {
@@ -135,11 +144,16 @@ public abstract class Hero {
             overTimeDuration--;
         }
 
+        foughtThisRound = false;
         postRoundHandler();
     }
 
     public void postRoundHandler() {
         // Nothing
+    }
+
+    public void postAttackHandler() {
+        foughtThisRound = true;
     }
 
     public abstract int getAttackDamage(Hero victim);

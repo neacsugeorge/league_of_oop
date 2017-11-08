@@ -38,5 +38,7 @@ public final class Pyromancer extends Hero {
 
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Ignite_DoT, IGNITE_DURATION, this);
+
+        this.postAttackHandler();
     }
 }

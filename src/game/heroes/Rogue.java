@@ -59,6 +59,8 @@ public final class Rogue extends Hero {
         victim.setAbilityOverTime(Ability.Paralysis, overTimeDuration, this);
 
         attackedThisRound = true;
+
+        this.postAttackHandler();
     }
 
     @Override

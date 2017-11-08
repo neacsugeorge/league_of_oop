@@ -13,7 +13,7 @@ public enum Ability {
     Execute_Limit(AbilityType.PERCENT, 20, 1, 40),
     Slam(AbilityType.FLAT, 100, 40),
     Stun(AbilityType.FLAT, 0, 0),
-    Drain(AbilityType.FLAT, 20, 5),
+    Drain(AbilityType.PERCENT, 20, 5),
     Deflect(AbilityType.PERCENT, 35, 2, 70),
     Backstab(AbilityType.FLAT, 200, 20),
     Paralysis(AbilityType.FLAT, 40, 10);
@@ -160,7 +160,6 @@ public enum Ability {
                             * (damage / PERCENT)
                             * landModifier
                             * Modifier.Deflect.getModifier(victim));
-                    System.out.println("Simulated: " + victim.getSimulatedDamage(attacker));
                 }
                 break;
             case Backstab:

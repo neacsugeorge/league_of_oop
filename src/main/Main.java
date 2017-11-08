@@ -7,11 +7,11 @@ import fileio.implementations.FileWriter;
 
 import java.awt.Point;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.ListIterator;
 
 class Main {
-    public static void printState(final ListIterator<Hero> iterator, final FileWriter output) throws IOException {
+    public static void printState(final ListIterator<Hero> iterator, final FileWriter output)
+            throws IOException {
         while (iterator.hasNext()) {
             Hero current = iterator.next();
             if (current.isAlive()) {
@@ -30,9 +30,11 @@ class Main {
                 output.writeNewLine();
 
                 // Debug
-                System.out.println(current.getShortName() + " " + current.getLevel() + " "
-                        + current.getXP() + " " + current.getHealth() + " "
-                        + (int) currentPosition.getX() + " " + (int) currentPosition.getY());
+                if (Hero.DEBUG) {
+                    System.out.println(current.getShortName() + " " + current.getLevel() + " "
+                            + current.getXP() + " " + current.getHealth() + " "
+                            + (int) currentPosition.getX() + " " + (int) currentPosition.getY());
+                }
             } else {
                 output.writeCharacter(current.getShortName());
                 output.writeCharacter(' ');
@@ -40,7 +42,9 @@ class Main {
                 output.writeNewLine();
 
                 // Debug
-                System.out.println(current.getShortName() + " dead");
+                if (Hero.DEBUG) {
+                    System.out.println(current.getShortName() + " dead");
+                }
             }
         }
     }

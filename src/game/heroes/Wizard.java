@@ -36,5 +36,7 @@ public final class Wizard extends Hero {
         }
 
         victim.setHealth(victim.getHealth() - damage, this);
+
+        this.postAttackHandler();
     }
 }
