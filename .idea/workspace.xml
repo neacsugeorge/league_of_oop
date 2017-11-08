@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0858d5ab-2cc2-476f-8596-28f280dfca4d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/game/Hero.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/game/Hero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Knight.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Knight.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Pyromancer.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Pyromancer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Rogue.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Rogue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Wizard.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/game/heroes/Wizard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/league_of_oop/main/Main.class" afterPath="$PROJECT_DIR$/out/production/league_of_oop/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/in.txt" afterPath="$PROJECT_DIR$/in.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out.txt" afterPath="$PROJECT_DIR$/out.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/Ability.java" afterPath="$PROJECT_DIR$/src/game/Ability.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/Hero.java" afterPath="$PROJECT_DIR$/src/game/Hero.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/Map.java" afterPath="$PROJECT_DIR$/src/game/Map.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/heroes/Knight.java" afterPath="$PROJECT_DIR$/src/game/heroes/Knight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/heroes/Pyromancer.java" afterPath="$PROJECT_DIR$/src/game/heroes/Pyromancer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/heroes/Rogue.java" afterPath="$PROJECT_DIR$/src/game/heroes/Rogue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/heroes/Wizard.java" afterPath="$PROJECT_DIR$/src/game/heroes/Wizard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +46,8 @@
       <file leaf-file-name="Rogue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/heroes/Rogue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            <state relative-caret-position="496">
+              <caret line="66" column="37" lean-forward="false" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/heroes/Wizard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="411">
-              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,7 +94,7 @@
       <file leaf-file-name="Ability.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/Ability.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="-439">
               <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,13 +106,13 @@
       <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="114" column="58" lean-forward="true" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
+            <state relative-caret-position="411">
+              <caret line="137" column="46" lean-forward="true" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Heroes#0;class#Map#0" expanded="false" />
-                <element signature="e#3856#3857#0" expanded="true" />
-                <element signature="e#3885#3886#0" expanded="true" />
+                <element signature="e#3851#3852#0" expanded="true" />
+                <element signature="e#3880#3881#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,13 +166,13 @@
         <option value="$PROJECT_DIR$/src/Ability.java" />
         <option value="$PROJECT_DIR$/src/heroes/Pyromancer.java" />
         <option value="$PROJECT_DIR$/../FileIO.jar!/fileio/implementations/FileReader.class" />
-        <option value="$PROJECT_DIR$/src/game/Map.java" />
-        <option value="$PROJECT_DIR$/src/game/heroes/Rogue.java" />
         <option value="$PROJECT_DIR$/src/game/heroes/Wizard.java" />
         <option value="$PROJECT_DIR$/src/game/heroes/Pyromancer.java" />
         <option value="$PROJECT_DIR$/src/game/heroes/Knight.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/game/Ability.java" />
+        <option value="$PROJECT_DIR$/src/game/Map.java" />
+        <option value="$PROJECT_DIR$/src/game/heroes/Rogue.java" />
         <option value="$PROJECT_DIR$/src/game/Hero.java" />
       </list>
     </option>
@@ -464,7 +465,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69683000" />
+    <option name="totallyTimeSpent" value="70466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1061" extended-state="0" />
@@ -550,8 +551,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Heroes#0;class#Map#0" expanded="false" />
-            <element signature="e#3856#3857#0" expanded="true" />
-            <element signature="e#3885#3886#0" expanded="true" />
+            <element signature="e#3851#3852#0" expanded="true" />
+            <element signature="e#3880#3881#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -748,7 +749,7 @@
     <entry file="file://$PROJECT_DIR$/src/game/heroes/Wizard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -765,29 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="114" column="58" lean-forward="true" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Heroes#0;class#Map#0" expanded="false" />
-            <element signature="e#3856#3857#0" expanded="true" />
-            <element signature="e#3885#3886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/heroes/Rogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/heroes/Knight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -798,9 +776,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Ability.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="-439">
           <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -808,10 +796,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/game/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="411">
+          <caret line="137" column="46" lean-forward="true" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Heroes#0;class#Map#0" expanded="false" />
+            <element signature="e#3851#3852#0" expanded="true" />
+            <element signature="e#3880#3881#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/heroes/Rogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="66" column="37" lean-forward="false" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

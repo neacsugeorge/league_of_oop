@@ -135,7 +135,7 @@ public class Map {
         }
 
         while (iterator.hasPrevious()) {
-            iterator.previous().postRoundHandler();
+            iterator.previous().finishRound();
         }
     }
 

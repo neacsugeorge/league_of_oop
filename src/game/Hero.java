@@ -122,7 +122,7 @@ public abstract class Hero {
         return true;
     }
 
-    public final void postRoundHandler() {
+    public final void finishRound() {
         int neededXP = BASE_LEVEL_REQUIRED_XP + level * PER_LEVEL_REQUIRED_XP;
         while (xp >= neededXP) {
             this.levelUp();
@@ -134,6 +134,12 @@ public abstract class Hero {
         } else {
             overTimeDuration--;
         }
+
+        postRoundHandler();
+    }
+
+    public void postRoundHandler() {
+        // Nothing
     }
 
     public abstract int getAttackDamage(Hero victim);

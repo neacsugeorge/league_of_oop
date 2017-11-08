@@ -14,6 +14,7 @@ public final class Rogue extends Hero {
     public static final char SHORT_NAME = 'R';
 
     private int stabs = 0;
+    private boolean attackedThisRound = false;
 
     public Rogue() {
         this.baseHealth = this.health = BASE_HEALTH;
@@ -57,6 +58,14 @@ public final class Rogue extends Hero {
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Paralysis, overTimeDuration, this);
 
-        stabs++;
+        attackedThisRound = true;
+    }
+
+    @Override
+    public void postRoundHandler() {
+        if (attackedThisRound) {
+            attackedThisRound = false;
+            stabs++;
+        }
     }
 }
