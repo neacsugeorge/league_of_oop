@@ -103,7 +103,7 @@ public class Map {
             int x = (int) currentPosition.getX(),
                     y = (int) currentPosition.getY();
 
-            if (current.canMove()) {
+            if (current.isAlive() && current.canMove()) {
                 currentPosition = move(currentPosition, moves[idx].charAt(0));
                 current.setPosition(currentPosition, landTypes[x][y]);
             }
@@ -114,10 +114,18 @@ public class Map {
             Hero current = iterator.next();
             Point currentPosition = current.getPosition();
 
+            if (!current.isAlive()) {
+                continue;
+            }
+
             ListIterator<Hero> nextIterator = heroes.listIterator(idx + 1);
             while (nextIterator.hasNext()) {
                 Hero next = nextIterator.next();
                 Point nextPosition = next.getPosition();
+
+                if (!next.isAlive()) {
+                    continue;
+                }
 
                 if (currentPosition.equals(nextPosition)) {
                     current.attack(next);

@@ -32,6 +32,9 @@ public final class Knight extends Hero {
     @Override
     public void attack(final Hero victim) {
         int damage = getAttackDamage(victim);
+        if (DEBUG) {
+            System.out.println("Knight:" + this + " attacked " + victim + " with: " + damage);
+        }
 
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Stun, STUN_DURATION, this);

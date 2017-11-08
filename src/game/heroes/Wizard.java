@@ -31,6 +31,9 @@ public final class Wizard extends Hero {
     @Override
     public void attack(final Hero victim) {
         int damage = getAttackDamage(victim);
+        if (DEBUG) {
+            System.out.println("Wizard:" + this + " attacked " + victim + " with: " + damage);
+        }
 
         victim.setHealth(victim.getHealth() - damage, this);
     }

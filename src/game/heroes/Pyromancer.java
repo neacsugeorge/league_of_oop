@@ -32,6 +32,9 @@ public final class Pyromancer extends Hero {
     @Override
     public void attack(final Hero victim) {
         int damage = getAttackDamage(victim);
+        if (DEBUG) {
+            System.out.println("Pyromancer:" + this + " attacked " + victim + " with: " + damage);
+        }
 
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Ignite_DoT, IGNITE_DURATION, this);

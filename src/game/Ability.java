@@ -107,13 +107,7 @@ public enum Ability {
             case Ignite_DoT:
             case Slam:
             case Paralysis:
-                damage = Math.round(damage * landModifier);
-                break;
             case Execute:
-                int limit = Ability.Execute_Limit.getDamage(attacker, victim);
-                if (limit <= victim.getHealth()) {
-                    damage = victim.getHealth();
-                }
                 damage = Math.round(damage * landModifier);
                 break;
             case Backstab:
@@ -144,7 +138,7 @@ public enum Ability {
                 break;
             case Execute:
                 int limit = Ability.Execute_Limit.getDamage(attacker, victim);
-                if (limit <= victim.getHealth()) {
+                if (limit >= victim.getHealth()) {
                     damage = victim.getHealth();
                 }
                 damage = Math.round(damage * landModifier * Modifier.Execute.getModifier(victim));
@@ -155,8 +149,8 @@ public enum Ability {
             case Drain:
                 int source = Math.min((int) (DRAIN_CONSTANT * victim.getMaxHealth()),
                         victim.getHealth());
-                damage = source * (damage / PERCENT);
-                damage = Math.round(damage * landModifier * Modifier.Drain.getModifier(victim));
+                damage = source * ((damage * Modifier.Drain.getModifier(victim)) / PERCENT);
+                damage = Math.round(damage * landModifier);
                 break;
             case Deflect:
                 if (victim instanceof Wizard) {
@@ -166,6 +160,7 @@ public enum Ability {
                             * (damage / PERCENT)
                             * landModifier
                             * Modifier.Deflect.getModifier(victim));
+                    System.out.println("Simulated: " + victim.getSimulatedDamage(attacker));
                 }
                 break;
             case Backstab:

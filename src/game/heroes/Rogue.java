@@ -31,11 +31,6 @@ public final class Rogue extends Hero {
     }
 
     @Override
-    public void postRoundHandler() {
-        stabs++;
-    }
-
-    @Override
     public int getAttackDamage(final Hero victim) {
         return Ability.Backstab.getDamage(this, victim)
                 + Ability.Paralysis.getDamage(this, victim);
@@ -50,6 +45,9 @@ public final class Rogue extends Hero {
     @Override
     public void attack(final Hero victim) {
         int damage = getAttackDamage(victim);
+        if (DEBUG) {
+            System.out.println("Rogue:" + this + " attacked " + victim + " with: " + damage);
+        }
 
         int overTimeDuration = PARALYSIS_DURATION_NORMAL;
         if (this.hasLandAdvantage()) {
@@ -58,5 +56,7 @@ public final class Rogue extends Hero {
 
         victim.setHealth(victim.getHealth() - damage, this);
         victim.setAbilityOverTime(Ability.Paralysis, overTimeDuration, this);
+
+        stabs++;
     }
 }

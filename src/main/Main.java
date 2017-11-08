@@ -36,18 +36,26 @@ class Main {
             } else {
                 output.writeCharacter(current.getShortName());
                 output.writeCharacter(' ');
-                output.writeWord("Dead");
+                output.writeWord("dead");
                 output.writeNewLine();
 
                 // Debug
-                System.out.println(current.getShortName() + " Dead");
+                System.out.println(current.getShortName() + " dead");
             }
         }
     }
 
     public static void main(final String[] args) throws IOException {
-        String inputFile = "/home/george/Work/league_of_oop/in.txt"; //args[0];
-        String outputFile = "out.txt"; //args[1];
+        String inputFile;
+        String outputFile;
+
+        if (Hero.DEBUG) {
+            inputFile = "/home/george/Work/league_of_oop/in.txt";
+            outputFile = "out.txt";
+        } else {
+            inputFile = args[0];
+            outputFile = args[1];
+        }
 
         FileReader input = new FileReader(inputFile);
         FileWriter output = new FileWriter(outputFile);
@@ -82,13 +90,32 @@ class Main {
         int rounds = 0;
         rounds = input.nextInt();
 
-        for (i = 0; i < rounds; i++) {
-            String round = input.nextWord();
-            game.executeRound(round);
+        if (Hero.DEBUG) {
+            System.out.println("Initial state: ");
+            printState(game.getHeroes().listIterator(), output);
+            System.out.println();
 
         }
 
+        for (i = 0; i < rounds; i++) {
+            String round = input.nextWord();
+
+            if (Hero.DEBUG) {
+                System.out.println("Round moves: " + round);
+            }
+
+            game.executeRound(round);
+
+            if (Hero.DEBUG) {
+                System.out.println("After round: " + i);
+                printState(game.getHeroes().listIterator(), output);
+                System.out.println();
+            }
+        }
+
         printState(game.getHeroes().listIterator(), output);
+
+        output.writeNewLine();
         input.close();
         output.close();
     }

@@ -14,10 +14,13 @@ public abstract class Hero {
     private static final int BASE_LEVEL_REQUIRED_XP = 250;
     private static final int PER_LEVEL_REQUIRED_XP = 50;
 
+    public static final boolean DEBUG = false;
+
     private Ability abilityOverTime;
     private Hero overTimeAttacker;
     private int abilityOverTimeDamage = 0;
     private int overTimeDuration = 0;
+    private boolean newOverTimeAbility = false;
 
     private Point position;
     protected char landType;
@@ -73,6 +76,7 @@ public abstract class Hero {
         this.abilityOverTimeDamage = ability.getDamage(attacker, this);
         this.overTimeDuration = duration;
         this.overTimeAttacker = attacker;
+        this.newOverTimeAbility = true;
     }
 
     public final void setHealth(final int newHealth, final Hero attacker) {
@@ -87,14 +91,7 @@ public abstract class Hero {
         int earnedXP = Math.max(0,
                 MAX_LEVEL_DIFFERENCE - (level - victim.getLevel()) * MAX_PER_LEVEL_DIFFERENCE);
 
-        int neededXP = BASE_LEVEL_REQUIRED_XP;
-        neededXP += level * PER_LEVEL_REQUIRED_XP;
-
-        if (xp + earnedXP >= neededXP) {
-            this.levelUp();
-        } else {
-            xp += earnedXP;
-        }
+        xp += earnedXP;
     }
 
     public final void levelUp() {
@@ -108,7 +105,6 @@ public abstract class Hero {
         }
 
         health -= abilityOverTimeDamage;
-        overTimeDuration--;
     }
 
     public final boolean hasLandAdvantage() {
@@ -117,23 +113,31 @@ public abstract class Hero {
 
     public final boolean canMove() {
         if (overTimeDuration > 0) {
-            return true;
-        }
-
-        if (abilityOverTime == Ability.Stun
-                || abilityOverTime == Ability.Paralysis) {
-            return false;
+            if (abilityOverTime == Ability.Stun
+                    || abilityOverTime == Ability.Paralysis) {
+                return false;
+            }
         }
 
         return true;
     }
 
-    public void postRoundHandler() {
-        // Nothing
+    public final void postRoundHandler() {
+        int neededXP = BASE_LEVEL_REQUIRED_XP + level * PER_LEVEL_REQUIRED_XP;
+        while (xp >= neededXP) {
+            this.levelUp();
+            neededXP = BASE_LEVEL_REQUIRED_XP + level * PER_LEVEL_REQUIRED_XP;
+        }
+
+        if (newOverTimeAbility) {
+            newOverTimeAbility = false;
+        } else {
+            overTimeDuration--;
+        }
     }
 
     public abstract int getAttackDamage(Hero victim);
-    public abstract int getSimulatedDamage(final Hero victim);
+    public abstract int getSimulatedDamage(Hero victim);
     public abstract void attack(Hero victim);
 
     public final void accept(final Hero attacker) {
